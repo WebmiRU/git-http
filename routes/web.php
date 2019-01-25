@@ -15,4 +15,7 @@
 //    return $router->app->version();
 //});
 
-$router->get('/', ['as' => 'profile', 'uses' => 'ExampleController@index']);
+$router->get('/', ['as' => 'index', 'uses' => 'IndexController@index']);
+
+//Branch routes
+$router->get('branch/current', ['as' => 'branch.current', 'uses' => 'BranchController@current']);

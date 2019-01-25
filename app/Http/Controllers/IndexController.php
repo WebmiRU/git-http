@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Services\Git;
 
-class ExampleController extends Controller
+class IndexController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -17,6 +17,6 @@ class ExampleController extends Controller
     }
 
     public function index() {
-        dd(Git::branchCurrent('jquery'));
+        return 'INDEX PAGE';
     }
 }
