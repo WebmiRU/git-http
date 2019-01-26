@@ -7,18 +7,17 @@ use Illuminate\Http\Request;
 
 class BranchController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
+    public function current(Request $request)
     {
-        //
+        $repository = $request->get('repository', null);
+        return Git::branchCurrent($repository);
     }
 
-    public function current(Request $request) {
+    public function list(Request $request)
+    {
         $repository = $request->get('repository', null);
-        return Git::branchCurrent($repository, true);
+        return Git::branchList($repository);
     }
+
+
 }
