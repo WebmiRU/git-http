@@ -16,7 +16,7 @@
 //});
 
 $router->get('/', ['as' => 'index', 'uses' => 'IndexController@index']);
-
+$router->get('t', ['as' => 'time', 'uses' => 'Controller@show']);
 //Branch routes
 $router->group(['prefix' => 'branch', 'as' => 'branch'], function () use ($router) {
     $router->get('current', ['as' => 'current', 'uses' => 'BranchController@current']);
