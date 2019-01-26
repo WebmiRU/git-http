@@ -17,6 +17,7 @@ class IndexController extends Controller
     }
 
     public function index() {
-        return Git::branchList('jquery'); //'INDEX PAGE';
+        return view('index');
+        return '<a href="'.route('branch.current', ['repository' => 'jquery']).'">Список веток репозитория</a>';
     }
 }

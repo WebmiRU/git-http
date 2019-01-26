@@ -18,4 +18,7 @@
 $router->get('/', ['as' => 'index', 'uses' => 'IndexController@index']);
 
 //Branch routes
-$router->get('branch/current', ['as' => 'branch.current', 'uses' => 'BranchController@current']);
+$router->group(['prefix' => 'branch', 'as' => 'branch'], function () use ($router) {
+    $router->get('current', ['as' => 'current', 'uses' => 'BranchController@current']);
+    $router->get('list', ['as' => 'list', 'uses' => 'BranchController@list']);
+});
