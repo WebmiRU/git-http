@@ -1,0 +1,10 @@
+version: '3'
+services:
+  web:
+    build: .
+    ports:
+      - "80:80"
+    volumes:
+      - ./../..:/var/www:rw #www-root folder
+      - ./git:/var/lib/git:rw
+      - ./logs:/var/log/apache2:rw
